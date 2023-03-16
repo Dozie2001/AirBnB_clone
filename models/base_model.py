@@ -34,7 +34,7 @@ class BaseModel:
 
     def save(self):
         """Update the updated_at with the current date_time"""
-        from models.__init__ import storage
+        from models import storage
         self.update_at = datetime.now()
         storage.save()
 
@@ -50,7 +50,7 @@ class BaseModel:
           to string object in ISO format
         """
 
-        my_dict = self__dict__.copy()
+        my_dict = self.__dict__.copy()
         my_dict['__class__'] = self.__class__.__name__
         for key, values in self.__dict__.items():
             if key in (created_at, updated_at):

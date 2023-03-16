@@ -32,23 +32,24 @@ class FileStorage():
         """Serializes __objects to the JSON file(path: __file_path)"""
         with open(self.__file_path, mode='w') as f:
             dict_storage = {}
-            for key, value in self.__objects.item():
+            for key, value in self.__objects.items():
                 dict_storage[key] = value.to_dict()
             json.dump(dict_storage, f)
 
     def reload(self):
-        """Deserializes the JSON file to __objects
+        """
+        Deserializes the JSON file to __objects
         -> Only IF it exists!
         """
         classes = {
             'BaseModel': BaseModel, 'User': User, 'Place': Place,
             'State': State, 'City': City, 'Amenity': Amenity,
-            'Review': Review}
+            'Review': Review
+        }
         try:
-            with open(self.__file.path, mode='r') as f:
+            with open(self.__file_path, 'r') as f:
                 jo = json.load(f)
-                for key in jo:
-                    self.__objects[key] = classes[jo[key][
-                                                  "__class__"]](**jo[key])
+            for key in jo:
+                self.__objects[key] = classes[jo[key]["__class__"]](**jo[key])
         except FileNotFoundError:
             pass

@@ -15,7 +15,6 @@ from models.amenity import Amenity
 from models.review import Review
 
 
-
 def parse_cmd(argv: str) -> list:
     """
     Parse or split a string (argv) based on some pattern

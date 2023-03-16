@@ -11,7 +11,7 @@ class BaseModel:
         # Don't understand this
         if not kwargs:
             # Don't understand yet
-            from models import storage
+            from models.__init__ import storage
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
@@ -34,7 +34,7 @@ class BaseModel:
 
     def save(self):
         """Update the updated_at with the current date_time"""
-        from models import storage
+        from models.__init__ import storage
         self.update_at = datetime.now()
         storage.save()
 

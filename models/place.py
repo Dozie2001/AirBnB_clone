@@ -10,7 +10,7 @@ class Place(BaseModel):
     name = ""
     number_rooms = 0
     description = ""
-    max_guest = ""
+    max_guest = 0
     price_by_night = 0
     latitude = 0.0
     number_bathrooms = 0

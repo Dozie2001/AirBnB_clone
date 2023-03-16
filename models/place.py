@@ -16,4 +16,5 @@ class Place(BaseModel):
     number_bathrooms = 0
     latitude = 0.0
     longitude = 0.0
-    amenity_ids = ''
+    amenity_ids = ""
+    price_by_night = 0

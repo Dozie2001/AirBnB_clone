@@ -41,6 +41,7 @@
 ## **[10.Flex](10.index.html)
 * Improve he Places section by using Flexible boxes for all Place articles
 
+
 ## **[11.Responsive design](11.index.html)
 * Improve the page by adding responsive design to display correctly in mobile or small screens.
 
